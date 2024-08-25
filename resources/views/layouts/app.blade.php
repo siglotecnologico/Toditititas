@@ -45,8 +45,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/gifall.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/gifall-responsive.css') }}" />
     <!-- Scripts
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        -->
+{{--         @vite(['resources/css/app.css', 'resources/js/app.js'])
+ --}}        -->
     <link rel="stylesheet" href="{{ asset('assets/css/burbujawhatsapp.css') }}" />
     <!-- Styles -->
     <style>
