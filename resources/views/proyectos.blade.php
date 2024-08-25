@@ -37,10 +37,10 @@
                                 <div class="white-bg"></div>
                                 <div class="left-bg"></div>
                                 <div class="right-bg"></div>
-                                <h2><a href="{{ route('proyectos.show', ['id' => 1]) }}">Entrega de Pañaleras <br> Bebés
+                                <h2><a href="{{ route('proyectos.show', 1) }}">Entrega de Pañaleras <br> Bebés
                                         Estrellas</a></h2>
                                 <div class="btn-box">
-                                    <a href="{{ route('proyectos.show', ['id' => 1]) }}">Detalles del Evento <span
+                                    <a href="{{ route('proyectos.show', 1) }}">Detalles del Evento <span
                                             class="icon-right-arrow21"></span></a>
                                 </div>
                             </div>
@@ -79,10 +79,10 @@
                                 <div class="white-bg"></div>
                                 <div class="left-bg"></div>
                                 <div class="right-bg"></div>
-                                <h2><a href="{{ route('proyectos.show', ['id' => 2]) }}">Brigadas de Salud <br> Bebés
+                                <h2><a href="{{ route('proyectos.show', 2) }}">Brigadas de Salud <br> Bebés
                                         Estrellas</a></h2>
                                 <div class="btn-box">
-                                    <a href="{{ route('proyectos.show', ['id' => 2]) }}">Detalles del Evento <span
+                                    <a href="{{ route('proyectos.show', 2) }}">Detalles del Evento <span
                                             class="icon-right-arrow21"></span></a>
                                 </div>
                             </div>
@@ -121,10 +121,10 @@
                                 <div class="white-bg"></div>
                                 <div class="left-bg"></div>
                                 <div class="right-bg"></div>
-                                <h2><a href="{{ route('proyectos.show', ['id' => 3]) }}">Capacitaciones en <br> Nutrición
+                                <h2><a href="{{ route('proyectos.show', 3) }}">Capacitaciones en <br> Nutrición
                                         Infantil</a></h2>
                                 <div class="btn-box">
-                                    <a href="{{ route('proyectos.show', ['id' => 3]) }}">Detalles del Evento <span
+                                    <a href="{{ route('proyectos.show', 3) }}">Detalles del Evento <span
                                             class="icon-right-arrow21"></span></a>
                                 </div>
                             </div>
@@ -163,10 +163,10 @@
                                 <div class="white-bg"></div>
                                 <div class="left-bg"></div>
                                 <div class="right-bg"></div>
-                                <h2><a href="{{ route('proyectos.show', ['id' => 4]) }}">Entrega de Insumos <br> Bebés
+                                <h2><a href="{{ route('proyectos.show', 4) }}">Entrega de Insumos <br> Bebés
                                         Estrellas</a></h2>
                                 <div class="btn-box">
-                                    <a href="{{ route('proyectos.show', ['id' => 4]) }}">Detalles del Evento <span
+                                    <a href="{{ route('proyectos.show', 4) }}">Detalles del Evento <span
                                             class="icon-right-arrow21"></span></a>
                                 </div>
                             </div>
@@ -201,10 +201,10 @@
                                 <div class="white-bg"></div>
                                 <div class="left-bg"></div>
                                 <div class="right-bg"></div>
-                                <h2><a href="{{ route('proyectos.show', ['id' => 7]) }}">Nutrición para el Crecimiento</a>
+                                <h2><a href="{{ route('proyectos.show', 7) }}">Nutrición para el Crecimiento</a>
                                 </h2>
                                 <div class="btn-box">
-                                    <a href="{{ route('proyectos.show', ['id' => 7]) }}">Detalles del Evento <span
+                                    <a href="{{ route('proyectos.show', 7) }}">Detalles del Evento <span
                                             class="icon-right-arrow21"></span></a>
                                 </div>
                             </div>
@@ -244,10 +244,10 @@
                                 <div class="white-bg"></div>
                                 <div class="left-bg"></div>
                                 <div class="right-bg"></div>
-                                <h2><a href="{{ route('proyectos.show', ['id' => 5]) }}">Charlas sobre <br> Cuidado
+                                <h2><a href="{{ route('proyectos.show', 5) }}">Charlas sobre <br> Cuidado
                                         Infantil</a></h2>
                                 <div class="btn-box">
-                                    <a href="{{ route('proyectos.show', ['id' => 5]) }}">Detalles del Evento <span
+                                    <a href="{{ route('proyectos.show', 5) }}">Detalles del Evento <span
                                             class="icon-right-arrow21"></span></a>
                                 </div>
                             </div>
@@ -286,10 +286,10 @@
                                 <div class="white-bg"></div>
                                 <div class="left-bg"></div>
                                 <div class="right-bg"></div>
-                                <h2><a href="{{ route('proyectos.show', ['id' => 6]) }}">Revisión Médica <br> Bebés
+                                <h2><a href="{{ route('proyectos.show', 6) }}">Revisión Médica <br> Bebés
                                         Estrellas</a></h2>
                                 <div class="btn-box">
-                                    <a href="{{ route('proyectos.show', ['id' => 6]) }}">Detalles del Evento <span
+                                    <a href="{{ route('proyectos.show', 6) }}">Detalles del Evento <span
                                             class="icon-right-arrow21"></span></a>
                                 </div>
                             </div>
