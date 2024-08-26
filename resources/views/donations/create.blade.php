@@ -4,34 +4,20 @@
         <section class="checkout-area donation-area">
             <div class="container">
                 <div class="row">
+
                     <!-- Start Donation Form -->
                     <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12">
                         <div class="form billing-info donation-info">
                             <div class="title">
-                                <h3>Detalles de la Donación</h3>
+                                <h3>Realizar Donanciones</h3>
                             </div>
 
-                            <!-- Mostrar mensajes de éxito o error -->
-                            @if (session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
 
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+                            <div id="pp-button"></div>
+                           {{--  <form>
 
-                            <form>
-                                {{--  @csrf  method="post" action="{{ route('donations.store') }}" --}}
                                 <div class="row">
-                                    <!-- Campos del formulario -->
+
                                     <div class="col-lg-6 col-md-6">
                                         <div class="field-label">Nombre *</div>
                                         <div class="field-input">
@@ -104,7 +90,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                     <!-- End Donation Form -->
@@ -115,17 +101,21 @@
                             <!-- Start Donation Summary -->
                             <div class="checkout-area__sidebar-single donation-summary">
                                 <div class="title">
-                                    <h3>Botones directos de Pago</h3>
+                                    <h3>Donar Otro Valor</h3>
                                 </div>
                                 <div class="donation-payment">
-                                    <a href="#" >
-                                        <img src="{{ asset('assets/images/donacionesconpyphone.png') }}" alt="PayPhone" style="height: 20px; margin-right: 10px;">
-                                        Pago con PayPhone
-                                    </a>
-                                    <a href="#">
-                                        <img src="{{ asset('assets/images/donacionesconpaypal.png') }}" alt="PayPhone" style="height: 20px; margin-right: 10px;">
-                                        Pago con PayPal
-                                    </a>
+                                    <form action="{{ route('donations.monto') }}" method="POST">
+                                        @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
+                                        <div class="field-input">
+                                            <input type="number" name="monto" placeholder="Monto en USD"
+                                                value="{{ old('monto') }}"
+                                                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                                        </div>
+                                        <div class="field-input">
+                                            <br>
+                                            <button type="submit" class="btn btn-primary">Actualizar mi Donación</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
 
@@ -165,3 +155,38 @@
 
     @endsection
 </x-app-layout>
+<script>
+    function generateUniqueTransactionId() {
+        return 'tx_' + Math.floor(Math.random() * 1000000000);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const token = '{{ $token }}';
+        const amount = {{ $amount }};
+        const amountWithoutTax = {{ $amountWithoutTax }};
+        const amountWithTax = {{ $amountWithTax }};
+        const tax = {{ $tax }};
+        const service = {{ $service }};
+        const tip = {{ $tip }};
+        const reference = '{{ $reference }}';
+        const clientTransactionId = generateUniqueTransactionId();
+
+        ppb = new PPaymentButtonBox({
+            token: token,
+            amount: amount,
+            amountWithoutTax: amountWithoutTax,
+            amountWithTax: amountWithTax,
+            tax: tax,
+            service: service,
+            tip: tip,
+            reference: reference,
+            clientTransactionId: clientTransactionId,
+        }).render('pp-button');
+
+        const buttonElement = document.querySelector('#pp-button');
+        if (buttonElement) {
+            buttonElement.querySelector('.message-button').innerText = 'Donar';
+        }
+    });
+
+</script>

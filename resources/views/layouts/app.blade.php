@@ -156,6 +156,9 @@
             }
         }
     </style>
+    <script type='module' src='https://cdn.payphonetodoesposible.com/box/v1.1/payphone-payment-box.js'></script>
+    <link Link rel='stylesheet' href='https://cdn.payphonetodoesposible.com/box/v1.1/payphone-payment-box.css'>
+    </link>
 </head>
 
 <body class="font-sans antialiased">
@@ -201,6 +204,8 @@
     </div>
 
 
+
+    
 
     <script src="{{ asset('assets/vendors/jquery/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

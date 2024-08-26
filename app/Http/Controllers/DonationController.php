@@ -9,9 +9,35 @@ class DonationController extends Controller
 {
     public function create()
     {
-        return view('donations.create');
-    }
+        $data = [
+            'token' => env('PAYPHONE_TOKEN'), // Asegúrate de que tu token esté almacenado en el archivo .env
+            'amount' => 1000,
+            'amountWithoutTax' => 1000,
+            'amountWithTax' => 0,
+            'tax' => 0,
+            'service' => 0,
+            'tip' => 0,
+            'reference' => 'Donacion desde la Pagina Web Toditititas',
+        ];
 
+        return view('donations.create',  $data);
+    }
+    public function monto(Request $request)
+    {
+        $monto = $request->input('monto') * 100;
+        $data = [
+            'token' => env('PAYPHONE_TOKEN'), // Asegúrate de que tu token esté almacenado en el archivo .env
+            'amount' => $monto,
+            'amountWithoutTax' => $monto,
+            'amountWithTax' => 0,
+            'tax' => 0,
+            'service' => 0,
+            'tip' => 0,
+            'reference' => 'Donacion desde la Pagina Web Toditititas',
+        ];
+
+        return view('donations.create',  $data);
+    }
     public function store(Request $request)
     {
         $validated = $request->validate([

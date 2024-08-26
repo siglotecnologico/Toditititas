@@ -46,7 +46,10 @@ Route::get('capacitaciones', function () {
 })->name('capacitaciones');
 Route::post('/pay', [DonationController::class, 'processPayment']);
 
-Route::get('/donate', [DonationController::class, 'create'])->name('donations.create');
+route::get('/donate', [DonationController::class, 'create'])->name('donations.create');
+
+route::post('/donate/montos', [DonationController::class, 'monto'])->name('donations.monto');
+
 Route::post('/donate', [DonationController::class, 'store'])->name('donations.store');
 Route::get('/thank-you', function () {
     return view('donations.thankyou');

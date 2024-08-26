@@ -21,7 +21,7 @@
                                         <a href="{{ route('donaciones') }}">Donaciones</a>
                                     </li>
                                     <li class="{{ request()->routeIs('proyectos') ? 'current' : '' }}">
-                                        <a href="{{ route('proyectos') }}">Proyetos</a>
+                                        <a href="{{ route('proyectos') }}">Proyectos</a>
                                     </li>
                                     <li class="{{ request()->routeIs('capacitaciones') ? 'current' : '' }}">
                                         <a href="{{ route('capacitaciones') }}">Capacitaciónes</a>

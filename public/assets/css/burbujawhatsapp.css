@@ -218,3 +218,53 @@
 }
 
 
+.message-button {
+    position: relative;
+    color: transparent; /* Oculta el texto original */
+}
+
+.message-button::before {
+    content: 'Donar Ahora!'; /* Nuevo texto a mostrar */
+    color: #ffffff; /* Color del nuevo texto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ppb-p.message.ppb-mb-0 {
+    position: relative;
+    color: transparent; /* Oculta el texto original */
+}
+
+
+.custom-donation-btn-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.custom-donate-button {
+    background-color: #10aef3; /* Verde para transmitir la idea de generosidad */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-donate-button:hover {
+    background-color: #3022fa; /* Un verde más oscuro para el hover */
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+.custom-donate-button:focus {
+    outline: none; /* Elimina el borde de enfoque predeterminado del botón */
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Agrega una sombra para el enfoque */
+}

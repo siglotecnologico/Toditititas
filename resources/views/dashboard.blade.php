@@ -398,6 +398,14 @@
                                             <p>1% de $12.000</p>
                                         </div>
                                     </div>
+
+                                </div>
+                                <div class="custom-donation-btn-box">
+                                    <form action="{{ route('donations.monto') }}" method="POST">
+                                        @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
+                                        <input type="hidden" name="monto" value="20">
+                                        <button type="submit" class="custom-donate-button">Donar $20</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -443,6 +451,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="custom-donation-btn-box">
+                                    <form action="{{ route('donations.monto') }}" method="POST">
+                                        @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
+                                        <input type="hidden" name="monto" value="50">
+                                        <button type="submit" class="custom-donate-button">Donar $50</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -486,6 +501,13 @@
                                             <p>7% de $21.000</p>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="custom-donation-btn-box">
+                                    <form action="{{ route('donations.monto') }}" method="POST">
+                                        @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
+                                        <input type="hidden" name="monto" value="100">
+                                        <button type="submit" class="custom-donate-button">Donar $100</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -531,6 +553,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="custom-donation-btn-box">
+                                    <form action="{{ route('donations.monto') }}" method="POST">
+                                        @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
+                                        <input type="hidden" name="monto" value="200">
+                                        <button type="submit" class="custom-donate-button">Donar $200</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -538,6 +567,7 @@
                 </div>
             </div>
         </section>
+
 
 
         <!--End Case One -->
