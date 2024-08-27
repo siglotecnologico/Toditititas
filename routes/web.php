@@ -44,16 +44,13 @@ Route::get('/project/{id}', [ProjectController::class, 'show'])->name('proyectos
 Route::get('capacitaciones', function () {
     return view('capacitaciones');
 })->name('capacitaciones');
-Route::post('/pay', [DonationController::class, 'processPayment']);
 
-route::get('/donate', [DonationController::class, 'create'])->name('donations.create');
+route::get('/donar', [DonationController::class, 'create'])->name('donations.create');
 
-route::post('/donate/montos', [DonationController::class, 'monto'])->name('donations.monto');
+route::post('/donar/mom', [DonationController::class, 'monto'])->name('donations.monto');
 
-Route::post('/donate', [DonationController::class, 'store'])->name('donations.store');
-Route::get('/thank-you', function () {
-    return view('donations.thankyou');
-})->name('donations.thankyou');
+Route::get('/thank-you', [DonationController::class, 'store'])->name('donations.thankyou');
+
 
 Route::middleware([
     'auth:sanctum',

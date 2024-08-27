@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="text-box">
                                     <p>Nuestro Email</p>
-                                    <p><a href="mailto:yourmail@email.com"><b style="color: white;">info@toditititas.org</b></a></p>
+                                    <p><a href="mailto:yourmail@email.com"><b>info@toditititas.org</b></a></p>
                                 </div>
                             </div>
                         </li>
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="text-box">
                                     <p>Contáctanos </p>
-                                    <p><a href="tel:593980008651"><b style="color: white;">+593 980 008 651</b></a></p>
+                                    <p><a href="tel:593980008651"><b>+593 980 008 651</b></a></p>
                                 </div>
                             </div>
                         </li>

@@ -2,12 +2,13 @@
     @section('content')
         <!--Start Page Header-->
         <section class="page-header">
-            <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header__bg" style="background-image: url(assets/images/slides/SLIDER3.png)">
             </div>
 
             <div class="container">
                 <div class="page-header__inner text-center">
-                    <h2>Sobre Nosotros</h2>
+                    <h2>" </h2>
+                    <h2>"</h2>
                 </div>
         </section>
         <!--End Page Header-->
@@ -394,7 +395,32 @@
         </section>
 
         <!--End Gallery One -->
-
+ <!--Start Video One -->
+ <section class="video-one">
+    <div class="shape3 float-bob-x"><img src="assets/images/shapes/video-v1-shape3.png" alt="#"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="video-one__inner">
+                    <div class="shape1"><img src="assets/images/shapes/video-v1-shape1.png" alt="#"></div>
+                    <div class="shape2"><img src="assets/images/shapes/video-v1-shape2.png" alt="#"></div>
+                    <div class="video-one__bg"
+                        style="background-image: url(assets/images/team/colaboradoras_fundacion_toditititas.jpg);"></div>
+                    <div class=" video-one__icon">
+                        <a href="https://www.youtube.com/watch?v=FafUEk4MppQ"
+                            class="video-one__btn video-popup">
+                            <span class="icon-play"></span>
+                        </a>
+                    </div>
+                    <div class="title-box">
+                        <h2>Toditititas</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Video One -->
 
 
         <section class="gallery-one__bottom style2">

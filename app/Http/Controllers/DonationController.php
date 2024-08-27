@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Donation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
+
 class DonationController extends Controller
 {
     public function create()
@@ -40,89 +42,72 @@ class DonationController extends Controller
     }
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'amount' => 'required|numeric|min:1',
-            'message' => 'nullable|string',
-        ]);
 
-        Donation::create($validated);
+        if ($request->has('id') && $request->has('clientTransactionId')) {
+            $transaccion = $request->input('id');
+            $client = $request->input('clientTransactionId');
 
-        // Aquí puedes redirigir a una página de agradecimiento o mostrar un mensaje
-        return redirect()->route('donations.index');
-    }
+            $data_array = [
+                'id' => (int) $transaccion,
+                'clientTxId' => $client,
+            ];
 
-    public function processPayment()
-    {
-        // Datos de prueba
-        $data = [
-            'CardToken' => 'token_de_prueba',
-            'CardHolder' => 'John Doe',
-            'PhoneNumber' => '+1234567890',
-            'Email' => 'john.doe@example.com',
-            'DocumentId' => '1234567890',
-            'Amount' => 100, // $1.00
-            'AmountWithTax' => 80, // $0.80, opcional
-            'AmountWithoutTax' => 0, // opcional
-            'Tax' => 20, // $0.20, opcional
-            'Service' => 0, // opcional
-            'Tip' => 0, // opcional
-            'ClientTransactionId' => 'txn_001',
-            'StoreId' => env('PAYPHONE_STORE_ID', 'store_001'), // opcional
-            'TerminalId' => env('PAYPHONE_TERMINAL_ID', 'terminal_001'), // opcional
-            'Currency' => env('PAYPHONE_CURRENCY', 'USD'), // opcional
-            'DeferredType' => 'deferred_001', // opcional
-            'ResponseUrl' => env('PAYPHONE_RESPONSE_URL', 'http://example.com/response'), // opcional
-        ];
+            $data = json_encode($data_array);
 
-        $url = env('PAYPHONE_API_URL') . '/Pay';
-        $token = env('PAYPHONE_API_TOKEN');
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL, 'https://pay.payphonetodoesposible.com/api/button/V2/Confirm');
+            curl_setopt($curl, CURLOPT_POST, 1);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            curl_setopt_array($curl, [
+                CURLOPT_HTTPHEADER => [
+                    'Authorization: Bearer '.env('PAYPHONE_TOKEN'),
+                    'Content-Type: application/json',
+                ],
+            ]);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+            $result = curl_exec($curl);
+            curl_close($curl);
 
-        // Realizar la llamada POST al API
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $token,
-        ])->post($url, $data);
+            $response_data = json_decode($result, true);
 
-        // Manejar la respuesta del API
-        if ($response->successful()) {
-            $responseData = $response->json();
-            $statusCode = $responseData['StatusCode'];
-            $status = $responseData['Status'];
+            if ($response_data) {
+                $transaction_details = [
+                    'Código de estado' => $response_data['statusCode'],
+                    'Estado de la transacción' => $response_data['transactionStatus'],
+                    'ID de transacción' => $response_data['transactionId'],
+                    'ID de transacción (Cliente)' => $response_data['clientTransactionId'],
+                    'Código de autorización' => $response_data['authorizationCode'],
+                    'Email' => $response_data['email'],
+                    'Teléfono' => $response_data['phoneNumber'],
+                    'Documento' => $response_data['document'],
+                    'Monto pagado' => $response_data['amount'],
+                    'Tipo de tarjeta' => $response_data['cardType'],
+                    'Código de marca de tarjeta' => $response_data['cardBrandCode'],
+                    'Marca de la tarjeta' => $response_data['cardBrand'],
+                    'BIN (Primeros 6 dígitos)' => $response_data['bin'],
+                    'Últimos dígitos de la tarjeta' => $response_data['lastDigits'],
+                    'Código de diferido' => $response_data['deferredCode'],
+                    'Mensaje de diferido' => $response_data['deferredMessage'],
+                    '¿Diferido?' => $response_data['deferred'] ? 'Sí' : 'No',
+                    'Mensaje' => $response_data['message'],
+                    'Código de mensaje' => $response_data['messageCode'],
+                    'Moneda' => $response_data['currency'],
+                    'Parámetro opcional 1' => $response_data['optionalParameter1'],
+                ];
 
-            if ($statusCode == 3) {
-                // Transacción aprobada
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Pago aprobado.',
-                    'data' => $responseData,
-                ]);
-            } elseif ($statusCode == 2) {
-                // Transacción cancelada
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Pago cancelado.',
-                    'data' => $responseData,
-                ]);
+                // Guardar los datos en un archivo JSON en la carpeta storage/app/public
+                $file_name = 'transaction_details_' . time() . '.json';
+                Storage::put($file_name, $result);
+                return view('donations.thankyou', ['transaction_details' => $transaction_details]);
             } else {
-                // Otros códigos de estado
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Error en la transacción.',
-                    'data' => $responseData,
-                ]);
+                return view('donations.thankyou', ['message' => 'Error en la transacción o respuesta vacía.']);
             }
         } else {
-            // Manejar errores en la solicitud
-            $error = $response->json();
-            $message = $error['message'] ?? 'La transacción no pudo ser creada por favor inténtelo de nuevo';
-
-            return response()->json([
-                'success' => false,
-                'message' => $message,
-                'errors' => $error,
-            ], $response->status());
+            return view('donations.thankyou', ['message' => "Los parámetros 'id' o 'clientTransactionId' no están definidos en la URL."]);
         }
+
+
     }
+
 
 }

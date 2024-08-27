@@ -101,19 +101,48 @@
                                     </div>
                                 </div>
 
-                                <div class="sidebar__single sidebar__donation-two">
+
+                                <div class="sidebar__single sidebar__donation-two wow animated fadeInUp"
+                                    data-wow-delay="0.2s">
                                     <div class="sidebar__donation-two-box text-center">
+                                        <div class="sidebar__donation-two-bg"
+                                            style="background-image: url(assets/images/blog/sidebar-donation-two-bg.jpg);">
+                                        </div>
                                         <div class="text-box">
-                                            <h2>Become A Donation</h2>
-                                            <p>Your support makes a difference in our events and activities.</p>
+                                            <h2>Conviértete en un Donante</h2>
+
                                         </div>
                                         <div class="btn-box">
-                                            <a href="#">Contribute</a>
+                                            <a href="{{ route('donations.create') }}">Contribuir</a>
                                         </div>
                                     </div>
                                 </div>
+                        
+                                <div class="sidebar__donation-two-box text-center">
+                                <div class="checkout-area__sidebar-single donation-summary">
+                                    <div class="title">
+                                        <h3>Donar ahora!</h3>
+                                    </div>
+                                    <div class="donation-payment">
+                                        <form action="{{ route('donations.monto') }}" method="POST">
+                                            @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
+                                            <div class="field-input">
+                                                <input type="number" name="monto" placeholder="Monto en USD"
+                                                    value="{{ old('monto') }}" required min="5" step="0.01"
+                                                    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                                            </div>
+                                            <div class="field-input">
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">Procesar Donación</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
                             </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>

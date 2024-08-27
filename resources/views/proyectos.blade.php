@@ -314,13 +314,14 @@
                                         alt="#">
                                 </div>
                                 <div class="text-box">
-                                    <h2><span class="odometer" data-count="648">00</span>
+                                    <h2> <span class="dollar">+</span><span class="odometer" data-count="100">00</span>
                                     </h2>
                                 </div>
                             </div>
 
                             <div class="counter-one__single-bottom">
-                                <p>Registered Charities Supported</p>
+                                <p>Voluntarios Activos
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -334,14 +335,16 @@
                                         alt="#">
                                 </div>
                                 <div class="text-box">
-                                    <h2> <span class="dollar">$</span> <span class="odometer" data-count="464">00</span>
-                                        <span class="m">m</span>
+                                    <h2> <span class="dollar">+</span> <span class="odometer" data-count="500">00</span>
+
                                     </h2>
                                 </div>
                             </div>
 
                             <div class="counter-one__single-bottom">
-                                <p>Raised For Charities</p>
+                                <p>Familias Beneficiadas
+
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -355,13 +358,15 @@
                                         alt="#">
                                 </div>
                                 <div class="text-box">
-                                    <h2><span class="odometer" data-count="587">00</span> <span class="m">k</span>
+                                    <h2><span class="dollar">+</span><span class="odometer" data-count="10">00</span>
                                     </h2>
                                 </div>
                             </div>
 
                             <div class="counter-one__single-bottom">
-                                <p>Users Making A Difference</p>
+                                <p>Proyectos Completados
+
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -315,7 +315,7 @@
                                         <form action="{{ route('donations.monto') }}" method="POST">
                                             @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
                                             <input type="hidden" name="monto" value="20">
-                                            <a href="#"><button type="submit">Donar $20</button></a>
+                                            <a type="submit"><button type="submit">Donar $20</button></a>
                                         </form>
                                     </div>
 
@@ -341,6 +341,25 @@
                                 </div>
                             </div>
                             <!--End Sidebar Single-->
+                            <div class="checkout-area__sidebar-single donation-summary">
+                                <div class="title">
+                                    <h3>Donar ahora!</h3>
+                                </div>
+                                <div class="donation-payment">
+                                    <form action="{{ route('donations.monto') }}" method="POST">
+                                        @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
+                                        <div class="field-input">
+                                            <input type="number"   name="monto" placeholder="Monto en USD"
+                                            value="{{ old('monto') }}" required  min="5" step="0.01"
+                                                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                                        </div>
+                                        <div class="field-input">
+                                            <br>
+                                            <button type="submit" class="btn btn-primary">Procesar Donación</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
 
                             <div class="sidebar__bottom wow animated fadeInUp" data-wow-delay="0.3s">
                                 <div class="sidebar__bottom-bg"

@@ -1357,12 +1357,12 @@
 /*Mobile Layout*/
 @media only screen and (max-width: 767px) {
     .auto-container {
-        padding: 0px 15px;
+        padding: 10px 20px;
     }
 
     .sec-title h2 {
-        font-size: 32px;
-        line-height: 1.2em;
+        font-size: 28px;
+        line-height: 1.3em;
     }
 
     .sec-title h2 br {
@@ -1370,13 +1370,14 @@
     }
 
     .sec-title__tagline h6 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .page-header__inner h2 {
         font-size: 45px;
         line-height: 55px;
     }
+
 
     /*Main Header One*/
     .main-header-one__top-middle {
@@ -1392,7 +1393,7 @@
     }
 
     .main-header-one .main-menu-box {
-        line-height: 0;
+        line-height: 1.2;
     }
 
     .main-header-one__bottom .main-menu__wrapper-inner {
@@ -1453,8 +1454,8 @@
     }
 
     .main-slider-one__content .title h2 {
-        font-size: 50px;
-        line-height: 1.1em;
+        font-size: 40px; /* Reducción del tamaño del título en el slider */
+        line-height: 1.2em; /* Ajuste de line-height */
     }
 
     .main-slider-one__content .text p br {
@@ -1574,7 +1575,7 @@
 
     /*Counter One*/
     .counter-one {
-        padding: 120px 0px 62px;
+        padding: 0px 0px 62px;
     }
 
     .counter-one .shape1 {

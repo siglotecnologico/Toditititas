@@ -17,7 +17,9 @@
 
                         <div class="contact-one__single-content">
                             <h2>Nuestra Zona</h2>
+                            <a href="https://maps.app.goo.gl/GzfypYXKopvyQ2ST7" target="_blank" rel="noopener noreferrer">
                             <p>Guayaquil - Ecuador</p>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@
                             "smartSpeed": 500,
                             "autoplayTimeout": 20000,
                             "navText": ["<span class=\"icon-arrow-right1\"></span>","<span class=\"icon-arrow-right\"></span>"],
-                            "responsive": {
+                             "responsive": {
                                     "0": {
                                         "items": 1
                                     },
@@ -36,9 +36,9 @@
                         <div class="image-layer"
                             style="background-image:url({{ asset('assets/images/slides/slider-v3.png') }})">
                         </div>
-                        <div class="shape1"><img src="{{ asset('assets/images/shapes/slider-v2.png') }}"
+                        <div class="shape1"><img src="{{ asset('assets/images/shapes/main-slider-v1-shape1.png') }}"
                                 alt="#"></div>
-                        <div class="shape2"><img src="{{ asset('assets/images/shapes/slider-v1.png') }}"
+                        <div class="shape2"><img src="{{ asset('assets/images/shapes/main-slider-v1-shape2.png') }}"
                                 alt="#"></div>
 
                         <div class="container">
@@ -268,14 +268,7 @@
                                                 </div>
                                             </div>
 
-                                            <ul class="about-one__content-bottom-left-list">
-                                                <li>
-                                                    <p>Fondos Recaudados para Iniciativas Comunitarias</p>
-                                                </li>
-                                                <li>
-                                                    <p>Comunidades Beneficiadas</p>
-                                                </li>
-                                            </ul>
+
                                         </div>
                                     </div>
 
@@ -343,6 +336,34 @@
                 </div>
             </div>
         </section>
+
+
+         <!--Start Video One -->
+         <section class="video-one">
+            <div class="shape3 float-bob-x"><img src="assets/images/shapes/video-v1-shape3.png" alt="#"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="video-one__inner">
+                            <div class="shape1"><img src="assets/images/shapes/video-v1-shape1.png" alt="#"></div>
+                            <div class="shape2"><img src="assets/images/shapes/video-v1-shape2.png" alt="#"></div>
+                            <div class="video-one__bg"
+                                style="background-image: url(assets/images/slides/slider-v4.jpg);"></div>
+                            <div class=" video-one__icon">
+                                <a href="https://www.youtube.com/watch?v=FafUEk4MppQ"
+                                    class="video-one__btn video-popup">
+                                    <span class="icon-play"></span>
+                                </a>
+                            </div>
+                            <div class="title-box">
+                                <h2>Toditititas</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Video One -->
 
 
         <!--End About One -->
@@ -589,12 +610,12 @@
                                     <img src="{{ asset('assets/images/shapes/counter-v1-shape1.png') }}" alt="#">
                                 </div>
                                 <div class="text-box">
-                                    <h2><span class="odometer" data-count="1">00</span></h2>
+                                    <h2><span class="dollar">+</span><span class="odometer" data-count="100">00</span></h2>
                                 </div>
                             </div>
 
                             <div class="counter-one__single-bottom">
-                                <p>Organizaciones Benéficas Registradas</p>
+                                <p>Voluntarios Activos</p>
                             </div>
                         </div>
                     </div>
@@ -608,13 +629,13 @@
                                     <img src="{{ asset('assets/images/shapes/counter-v1-shape2.png') }}" alt="#">
                                 </div>
                                 <div class="text-box">
-                                    <h2><span class="dollar">$</span><span class="odometer"
-                                            data-count="550">00</span><span class="m"></span></h2>
+                                    <h2><span class="dollar">+</span><span class="odometer"
+                                            data-count="500">00</span><span class="m"></span></h2>
                                 </div>
                             </div>
 
                             <div class="counter-one__single-bottom">
-                                <p>Fondos Recaudados para Organizaciones Benéficas</p>
+                                <p>Familias Beneficiadas</p>
                             </div>
                         </div>
                     </div>
@@ -628,12 +649,12 @@
                                     <img src="{{ asset('assets/images/shapes/counter-v1-shape3.png') }}" alt="#">
                                 </div>
                                 <div class="text-box">
-                                    <h2><span class="odometer" data-count="10">00</span><span class="m"></span></h2>
+                                    <h2><span class="dollar">+</span><span class="odometer" data-count="10">00</span><span class="m"></span></h2>
                                 </div>
                             </div>
 
                             <div class="counter-one__single-bottom">
-                                <p>Usuarios que están Haciendo la Diferencia</p>
+                                <p>Proyectos Completados</p>
                             </div>
                         </div>
                     </div>
@@ -700,8 +721,7 @@
                                             <span class="icon-charity"></span>
                                         </div>
                                         <div class="text-box">
-                                            <h2><span class="dollar">$ </span><span class="odometer"
-                                                    data-count="550.00">550.00</span><span class="plus">+</span></h2>
+                                            <h2>$<span class="odometer"  data-count="5550.00">5550.00</span><span class="plus">+</span></h2>
                                             <p>Donaciones Desde 2020</p>
                                         </div>
                                     </div>
@@ -766,17 +786,19 @@
                 </div>
             </div>
 
-            <div class="gallery-one__bottom">
+            <section class="gallery-one__bottom style2">
                 <div class="auto-container">
                     <div class="row">
                         <!--Start Gallery One Single-->
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="0ms"
+                            data-wow-duration="1500ms">
                             <div class="gallery-one__single">
                                 <div class="gallery-one__single-img">
-                                    <img src="{{ asset('assets/images/gallery/gallery-v1-img1.jpg') }}"
-                                        alt="Recaudación de Fondos">
+                                    <img src="assets/images/gallery/gallery-v1-img1.jpg" alt="#">
                                     <div class="text-box">
-                                        <h2><a href="{{ route('donations.create') }}">Recaudación de Fondos</a></h2>
+                                        <h2><a href="{{ route('proyectos') }}">Iniciativas de Recaudación</a></h2>
+                                        <p id="colorBlanco">Explora nuestros eventos y campañas diseñados para reunir recursos
+                                            cruciales y fomentar la colaboración comunitaria.</p>
                                     </div>
                                 </div>
                             </div>
@@ -784,13 +806,15 @@
                         <!--End Gallery One Single-->
 
                         <!--Start Gallery One Single-->
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.2s">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="100ms"
+                            data-wow-duration="1500ms">
                             <div class="gallery-one__single">
                                 <div class="gallery-one__single-img bg2">
-                                    <img src="{{ asset('assets/images/gallery/gallery-v1-img2.jpg') }}"
-                                        alt="Alimentos Frescos">
+                                    <img src="assets/images/gallery/gallery-v1-img2.jpg" alt="#">
                                     <div class="text-box">
-                                        <h2><a href="{{ route('donations.create') }}">Alimentos Frescos</a></h2>
+                                        <h2><a href="{{ route('proyectos') }}">Nutrición para Todos</a></h2>
+                                        <p id="colorBlanco">Descubre nuestras iniciativas para proporcionar alimentos frescos y
+                                            nutritivos a las familias en necesidad.</p>
                                     </div>
                                 </div>
                             </div>
@@ -798,12 +822,15 @@
                         <!--End Gallery One Single-->
 
                         <!--Start Gallery One Single-->
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="200ms"
+                            data-wow-duration="1500ms">
                             <div class="gallery-one__single">
                                 <div class="gallery-one__single-img bg3">
-                                    <img src="{{ asset('assets/images/gallery/gallery-v1-img3.jpg') }}" alt="Educación">
+                                    <img src="assets/images/gallery/gallery-v1-img3.jpg" alt="#">
                                     <div class="text-box">
-                                        <h2><a href="{{ route('donations.create') }}">Educación</a></h2>
+                                        <h2><a href="{{ route('proyectos') }}">Proyectos Educativos</a></h2>
+                                        <p id="colorBlanco">Conoce los programas y talleres que impulsamos para educar y
+                                            empoderar a las comunidades vulnerables.</p>
                                     </div>
                                 </div>
                             </div>
@@ -811,12 +838,15 @@
                         <!--End Gallery One Single-->
 
                         <!--Start Gallery One Single-->
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.4s">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
                             <div class="gallery-one__single">
                                 <div class="gallery-one__single-img bg4">
-                                    <img src="{{ asset('assets/images/gallery/gallery-v1-img4.jpg') }}" alt="Médico">
+                                    <img src="assets/images/gallery/gallery-v1-img4.jpg" alt="#">
                                     <div class="text-box">
-                                        <h2><a href="{{ route('donations.create') }}">Médico</a></h2>
+                                        <h2><a href="{{ route('proyectos') }}">Salud y Bienestar</a></h2>
+                                        <p id="colorBlanco">Infórmate sobre nuestros programas de asistencia médica y cómo
+                                            trabajamos para mejorar el acceso a la salud.</p>
                                     </div>
                                 </div>
                             </div>
@@ -824,7 +854,7 @@
                         <!--End Gallery One Single-->
                     </div>
                 </div>
-            </div>
+            </section>
         </section>
 
 
