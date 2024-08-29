@@ -17,7 +17,7 @@
 
                         <div class="contact-one__single-content">
                             <h2>Nuestra Zona</h2>
-                            <a href="https://maps.app.goo.gl/GzfypYXKopvyQ2ST7" target="_blank" rel="noopener noreferrer">
+                            <a href="https://maps.app.goo.gl/J8mXQTnFnF1eeFZt5" target="_blank" rel="noopener noreferrer">
                             <p>Guayaquil - Ecuador</p>
                             </a>
                         </div>
@@ -146,7 +146,7 @@
                     <!--Start Contact Two Content-->
                     <div class="col-xl-6 col-lg-5">
                         <div class="contact-two__content">
-                            <a href="https://maps.app.goo.gl/GzfypYXKopvyQ2ST7" target="_blank" rel="noopener noreferrer">
+                            <a href="https://maps.app.goo.gl/J8mXQTnFnF1eeFZt5" target="_blank" rel="noopener noreferrer">
                             <div class="contact-two__content-single text-center wow animated fadeInUp"
                                 data-wow-delay="0.1s">
                                 <div class="icon-box">
