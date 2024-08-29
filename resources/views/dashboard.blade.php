@@ -329,7 +329,7 @@
 
                         <div class="about-one__bottom-btn">
                             <a class="thm-btn" href="{{ route('about') }}">
-                                <span class="txt">Conoce Más Sobre Nosotros</span>
+                                <span class="txt">Conoce más</span>
                             </a>
                         </div>
                     </div>

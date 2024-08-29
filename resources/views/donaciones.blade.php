@@ -248,8 +248,9 @@
 
                             <div class="comment-form">
                                 <h2 class="comment-form__title">Deja Un Comentario</h2>
-                                <form id="contact-form" class="default-form2 contact-form-validated comment-one__form"
-                                    action="assets/inc/sendemail.php" novalidate="novalidate">
+                                <form id="contact-form" class="default-form2 contact-form-validated comment-one__form"  action="{{ route('unirse.store') }}"
+                                method="post"  novalidate="novalidate">
+                                @csrf
 
                                     <div class="row">
                                         <div class="col-xl-12 col-lg-12 col-md-12">
