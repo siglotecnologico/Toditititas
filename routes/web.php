@@ -67,5 +67,5 @@ Route::middleware([
 Route::post('/formularioContacto', [ContactoController::class, 'store'])->name('contacto.store');
 Route::post('/formularioContactoinfo', [ContactoController::class, 'contactoinfo'])->name('contactoinfo.store');
 Route::post('/formulariosuscripcion', [ContactoController::class, 'suscripcion'])->name('suscripcion.store');
-Route::post('/formulariounirse', [ContactoController::class, 'unirse'])->name('unirse.store');
+Route::post('/unirse', [ContactoController::class, 'unirse'])->name('unirse.store');
 Route::post('/formulariocontactoinfo', [ContactoController::class, 'contactoinfo'])->name('contactoinfo.store');
