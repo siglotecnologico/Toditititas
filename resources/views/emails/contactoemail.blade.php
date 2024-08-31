@@ -22,7 +22,7 @@
         .header {
             text-align: center;
             padding: 20px 0;
-            background-color: #3e8f75;
+            background-color: #10aef3;
             color: #ffffff;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
@@ -51,7 +51,7 @@
         .footer {
             text-align: center;
             padding: 20px 0;
-            background-color: #3e8f75;
+            background-color: #10aef3;
             color: #cac9d1;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
@@ -62,17 +62,17 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://dv.toditititas.org/assets/images/resources/logo210x70.png" alt="Logo de la Fundación">
-            <h1>Fundación Dios es Bueno, Fiel y Justo</h1>
+            <img src="https://toditititas.org/assets/images/resources/logoBlanco.png" alt="Logo de la Fundación">
+            <h1>Fundación Toditititas</h1>
         </div>
         <div class="content">
             <p>Hola {{ $name }},</p>
             <p>Gracias por ponerte en contacto con nosotros. Hemos recibido tu mensaje y pronto nos pondremos en contacto contigo.</p>
             <p>Si tienes alguna pregunta adicional, no dudes en <a href="mailto:info@toditititas.org">contactarnos</a>.</p>
-            <p>Gracias,<br>El equipo de la Fundación Dios es Bueno, Fiel y Justo</p>
+            <p>Gracias,<br>El equipo de la Fundación Toditititas</p>
         </div>
         <div class="footer">
-            <p>¿Quieres apoyar nuestra misión? <a href="https://dv.toditititas.org/donaciones" class="donation-link">
+            <p>¿Quieres apoyar nuestra misión? <a href="https://toditititas.org/donar" class="donation-link">
                 <i class="icon-donation"></i>Haz una donación aquí
             </a></p>
         </div>

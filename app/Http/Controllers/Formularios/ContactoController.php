@@ -11,20 +11,20 @@ class ContactoController extends Controller
     public function store(Request $request)
     {
         // Validar los datos del formulario
-        /* $validatedData = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'option' => 'required|string',
             'message' => 'required|string',
             'terms' => 'accepted',
-        ]); */
+        ]);
 
-
-       /*  // Enviar el correo electrónico
+        
+         // Enviar el correo electrónico
         Mail::raw("Nombre: {$validatedData['name']}\nEmail: {$validatedData['email']}\nOpción: {$validatedData['option']}\nMensaje: {$validatedData['message']}", function($message) use ($validatedData) {
             $message->to('info@toditititas.org')
                     ->subject('Nueva consulta de contacto');
-        }); */
+        });
 
         // Enviar una respuesta al cliente
         return redirect()->back()->with('success', 'Tu información fue enviada con éxito. Nos pondremos en contacto contigo muy pronto.');
@@ -38,7 +38,7 @@ class ContactoController extends Controller
             'email' => 'required|email|max:255'
         ]);
 
-         /*    // Enviar el correo electrónico
+            // Enviar el correo electrónico
         Mail::send('emails.subscription', [], function($message) use ($validatedData) {
             $message->to($validatedData['email'])
                     ->subject('Gracias por suscribirte a nuestro boletín');
@@ -48,7 +48,7 @@ class ContactoController extends Controller
         Mail::raw("Nuevo suscriptor al boletín:\nEmail: {$validatedData['email']}", function($message) use ($validatedData) {
             $message->to('info@toditititas.org')
                     ->subject('Nueva suscripción al boletín');
-        }); */
+        });
         if ($request->ajax()) {
             return response()->json(['message_suscripcion' => 'Te has suscrito con éxito. Pronto recibirás nuestras actualizaciones.'], 200);
         }
@@ -76,7 +76,7 @@ class ContactoController extends Controller
             'message' => $validatedData['message'],
         ];
 
-       /*  // Enviar el correo electrónico al usuario que se unió
+        // Enviar el correo electrónico al usuario que se unió
         Mail::send('emails.unirse', $data, function($message) use ($validatedData) {
             $message->to($validatedData['email'])
                     ->subject('Gracias por unirte a nosotros');
@@ -86,7 +86,7 @@ class ContactoController extends Controller
         Mail::raw("Nueva solicitud de unirse:\nNombre: {$validatedData['first_name']} {$validatedData['last_name']}\nEmail: {$validatedData['email']}\nDirección: {$validatedData['address']}\nMensaje: {$validatedData['message']}", function($message) use ($validatedData) {
             $message->to('info@toditititas.org')
                     ->subject('Nueva solicitud de unirse');
-        }); */
+        });
 
         if ($request->ajax()) {
             return response()->json(['messagesuscribete' => 'Te has unido con éxito. Pronto nos pondremos en contacto contigo.'], 200);
@@ -115,7 +115,7 @@ class ContactoController extends Controller
         ];
 
         // Enviar el correo electrónico al usuario
-       /*  Mail::send('emails.contactoemail', $data, function($message) use ($validatedData) {
+        Mail::send('emails.contactoemail', $data, function($message) use ($validatedData) {
             $message->to($validatedData['email'])
                     ->subject('Gracias por contactarnos');
         });
@@ -124,7 +124,7 @@ class ContactoController extends Controller
         Mail::raw("Nuevo mensaje de contacto:\nNombre: {$validatedData['name']}\nEmail: {$validatedData['email']}\nTeléfono: {$validatedData['phone']}\nMensaje: {$validatedData['message']}", function($message) use ($validatedData) {
             $message->to('info@toditititas.org')
                     ->subject('Nuevo mensaje de contacto');
-        }); */
+        });
 
         if ($request->ajax()) {
             return response()->json(['message' => 'Tu mensaje ha sido enviado con éxito. Pronto nos pondremos en contacto contigo.'], 200);
