@@ -29,6 +29,9 @@
                                     <li class="{{ request()->routeIs('contactos') ? 'current' : '' }}">
                                         <a href="{{ route('contactos') }}">Contactos</a>
                                     </li>
+                                    <li class="{{ request()->routeIs('faq') ? 'current' : '' }}">
+                                        <a href="{{ route('faq') }}">FAQ</a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -36,7 +39,8 @@
 
                         <div class="main-header-one__bottom-right">
                             <div class="btn-box1">
-                                <a href="{{ route('donations.create') }}">Contribuir </a>
+                                <a href="{{ route('donate.index') }}">Contribuir </a>
+                               {{--  <a href="{{ route('donations.create') }}">Contribuir </a> --}}
                             </div>
 
                             <div class="btn-box2">

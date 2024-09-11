@@ -7,25 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
-class DonationController extends Controller
+class DonationDatafastController extends Controller
 {
-    public function create()
+    public function index()
     {
-        $data = [
-            'token' => env('PAYPHONE_TOKEN'), // Asegúrate de que tu token esté almacenado en el archivo .env
-            'amount' => 1000,
-            'amountWithoutTax' => 1000,
-            'amountWithTax' => 0,
-            'tax' => 0,
-            'service' => 0,
-            'tip' => 0,
-            'reference' => 'Donacion desde la Pagina Web Toditititas',
-        ];
-
-
-            return view('donations.create', $data);
-         
+        return view('donations.pyDatafast');
     }
+    
     public function monto(Request $request)
     {
         $monto = $request->input('monto') * 100;
@@ -42,9 +30,13 @@ class DonationController extends Controller
 
         return view('donations.create',  $data);
     }
-    public function store(Request $request)
-    {
-
+    public function proce(Request $request)
+    {dd($request);
+        // Obtener los datos del formulario de contacto
+        $name = $request->query('name'); // o $request->input('name') si es por POST
+        $email = $request->query('email');
+        $message = $request->query('message');
+        dd(  $email );
         if ($request->has('id') && $request->has('clientTransactionId')) {
             $transaccion = $request->input('id');
             $client = $request->input('clientTransactionId');

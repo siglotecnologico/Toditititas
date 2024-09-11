@@ -137,22 +137,7 @@
 
 
 
-.social-icon.facebook {
-    background-image: url('assets/images/facebook-icon.png');
-}
-
-.social-icon.twitter {
-    background-image: url('assets/images/twitter-icon.png');
-}
-
-.social-icon.instagram {
-    background-image: url('assets/images/instagram-icon.png');
-}
-
-.social-icon.linkedin {
-    background-image: url('assets/images/linkedin-icon.png');
-}
-
+ 
 
 .footer-socials {
     margin-top: 10px;
@@ -178,21 +163,7 @@
     transform: scale(1.1);
 }
 
-.social-icon.facebook {
-    background-image: url('assets/images/facebook-icon-color.png');
-}
 
-.social-icon.twitter {
-    background-image: url('assets/images/twitter-icon-color.png');
-}
-
-.social-icon.instagram {
-    background-image: url('assets/images/instagram-icon-color.png');
-}
-
-.social-icon.linkedin {
-    background-image: url('assets/images/linkedin-icon-color.png');
-}
 /* Estilos para los iconos de redes sociales */
 .social-icon {
     font-size: 32px;
@@ -267,4 +238,33 @@
 .custom-donate-button:focus {
     outline: none; /* Elimina el borde de enfoque predeterminado del botón */
     box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Agrega una sombra para el enfoque */
+}
+
+
+.wpwl-control {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.wpwl-button-pay {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.wpwl-button-pay:hover {
+    background-color: #0056b3;
+}
+form.wpwl-form .wpwl-group-cardNumber .wpwl-label {
+    color: #333;
+    font-weight: bold;
+}
+
+form.wpwl-form .wpwl-wrapper-brand select {
+    border: 1px solid #ddd;
 }

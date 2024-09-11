@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div class="btn-box">
-                                    <a class="thm-btn" href="{{ route('donations.create') }}">
+                                    <a class="thm-btn" href="{{ route('donate.index') }}">
                                         <span class="txt">Apoya Nuestra Causa</span>
                                     </a>
                                 </div>
@@ -91,7 +91,7 @@
                                 </div>
 
                                 <div class="btn-box">
-                                    <a class="thm-btn" href="{{ route('donations.create') }}">
+                                    <a class="thm-btn" href="{{ route('donate.index') }}">
                                         <span class="txt">Contribuir Ahora</span>
                                     </a>
                                 </div>
@@ -126,7 +126,7 @@
                                 </div>
 
                                 <div class="btn-box">
-                                    <a class="thm-btn" href="{{ route('donations.create') }}">
+                                    <a class="thm-btn" href="{{ route('donate.index') }}">
                                         <span class="txt">Contribuir Ahora</span>
                                     </a>
                                 </div>
@@ -398,7 +398,7 @@
                                     <div class="case-one__single-content-bg"
                                         style="background-image: url({{ asset('assets/images/shapes/case-v1-shape1.png') }});">
                                     </div>
-                                    <h2><a href="{{ route('donations.create') }}">Transforma vidas con una alimentación
+                                    <h2><a href="{{ route('donate.index') }}">Transforma vidas con una alimentación
                                             adecuada</a></h2>
                                     <p>Con tu apoyo, podemos asegurar una nutrición adecuada para los jóvenes más
                                         vulnerables.</p>
@@ -451,7 +451,7 @@
                                     <div class="case-one__single-content-bg"
                                         style="background-image: url({{ asset('assets/images/shapes/case-v1-shape1.png') }});">
                                     </div>
-                                    <h2><a href="{{ route('donations.create') }}">Combate el hambre y brinda esperanza</a></h2>
+                                    <h2><a href="{{ route('donate.index') }}">Combate el hambre y brinda esperanza</a></h2>
                                     <p>Tu contribución es esencial para proporcionar asistencia a quienes más lo necesitan.
                                     </p>
                                 </div>
@@ -502,7 +502,7 @@
                                     <div class="case-one__single-content-bg"
                                         style="background-image: url({{ asset('assets/images/shapes/case-v1-shape1.png') }});">
                                     </div>
-                                    <h2><a href="{{ route('donations.create') }}">Brinda salud y esperanza a quienes lo
+                                    <h2><a href="{{ route('donate.index') }}">Brinda salud y esperanza a quienes lo
                                             necesitan</a></h2>
                                     <p>Tu generosidad ayuda a proporcionar atención médica a los niños más necesitados.</p>
                                 </div>
@@ -727,7 +727,7 @@
                                     </div>
 
                                     <div class="btn-box">
-                                        <a class="thm-btn" href="{{ route('donations.create') }}">
+                                        <a class="thm-btn" href="{{ route('donate.index') }}">
                                             <span class="txt">Haz tu Donación</span>
                                         </a>
                                     </div>

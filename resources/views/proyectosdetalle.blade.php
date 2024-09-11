@@ -113,11 +113,11 @@
 
                                         </div>
                                         <div class="btn-box">
-                                            <a href="{{ route('donations.create') }}">Contribuir</a>
+                                            <a href="{{ route('donate.index') }}">Contribuir</a>
                                         </div>
                                     </div>
                                 </div>
-                        
+
                                 <div class="sidebar__donation-two-box text-center">
                                 <div class="checkout-area__sidebar-single donation-summary">
                                     <div class="title">

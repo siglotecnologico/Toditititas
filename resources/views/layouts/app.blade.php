@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ config('app.name', 'Fundacción Toditititas') }}</title>
     {{--  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" /> --}}
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicons/cropped-logo.ico') }}" />
-    <link rel="manifest" href="{{ asset('assets/images/favicons/site.webmanifest') }}" />
+
     <meta name="description" content="Gifall HTML 5 Template " />
 
     <!-- Fonts -->
@@ -159,6 +160,7 @@
     <script type='module' src='https://cdn.payphonetodoesposible.com/box/v1.1/payphone-payment-box.js'></script>
     <link Link rel='stylesheet' href='https://cdn.payphonetodoesposible.com/box/v1.1/payphone-payment-box.css'>
     </link>
+    @livewireStyles
 </head>
 
 <body class="font-sans antialiased">
@@ -185,8 +187,8 @@
         <!--End Main Header One-->
 
         @yield('content')
-
-
+        {{ $slot }}
+        @livewireScripts
         @include('layouts/burbujawhatsapp')
         <!--Start Footer One -->
         @include('layouts/footer')
@@ -197,12 +199,11 @@
 
     <!-- Botón Flotante de Donación -->
     <div class="donate-float-button">
-        <a href="{{ route('donations.create') }}" class="donate-button">
+        <a href="{{ route('donate.index') }}" class="donate-button">
             <span class="icon"><i class="fas fa-donate"></i></span>
             <span class="text">Donar</span>
         </a>
     </div>
-
 
 
 
@@ -237,6 +238,8 @@
     <script src="{{ asset('assets/vendors/slick-slider/slick.js') }}"></script>
     <script src="{{ asset('assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/progress-bar/knob.js') }}"></script>
+
+
 
     <!-- Template js -->
     <script src="{{ asset('assets/js/custom.js') }}"></script>

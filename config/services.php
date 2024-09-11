@@ -30,5 +30,11 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'payphone' => [
+        'url' => env('PAYPHONE_URL'),
+        'entity_id' => env('PAYPHONE_ENTITY_ID'),
+        'authorization' => env('PAYPHONE_AUTHORIZATION'),
+    ],
+
 
 ];

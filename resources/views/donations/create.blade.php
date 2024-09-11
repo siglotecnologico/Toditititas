@@ -1,6 +1,5 @@
 <x-app-layout>
     @section('content')
-
         <section class="checkout-area donation-area">
             <div class="container">
                 <div class="row">
@@ -12,11 +11,10 @@
                                 <h3>Realizar Donanciones</h3>
                             </div>
 
-
                             <div id="pp-button"></div>
-
                         </div>
                     </div>
+
                     <!-- End Donation Form -->
 
                     <!-- Start Donation Sidebar -->
@@ -31,8 +29,9 @@
                                     <form action="{{ route('donations.monto') }}" method="POST">
                                         @csrf <!-- Esto es importante para proteger el formulario contra CSRF -->
                                         <div class="field-input">
-                                            <input type="number"   name="monto" placeholder="Monto en USD"
-                                            value="{{ old('monto', $amount/100) }}" required min="5" step="0.01"
+                                            <input type="number" name="monto" placeholder="Monto en USD"
+                                                value="{{ old('monto', $amount / 100) }}" required min="5"
+                                                step="0.01"
                                                 style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
                                         </div>
                                         <div class="field-input">
@@ -73,12 +72,19 @@
                         </div>
                     </div>
                     <!-- End Donation Sidebar -->
+                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                        <div class="form billing-info donation-info">
+                            <form action="{{ route('donations.thankyou') }}" class="paymentWidgets"
+                                data-brands="VISA MASTER DINERS DISCOVER AMEX">
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
     @endsection
 </x-app-layout>
+
 <script>
     function generateUniqueTransactionId() {
         return 'tx_' + Math.floor(Math.random() * 1000000000);
@@ -109,8 +115,13 @@
 
         const buttonElement = document.querySelector('#pp-button');
         if (buttonElement) {
-            buttonElement.querySelector('.message-button').innerText = 'Donar';
+            const checkExist = setInterval(() => {
+                const messageButton = buttonElement.querySelector('.message-button');
+                if (messageButton) {
+                    messageButton.innerText = 'Donar';
+                    clearInterval(checkExist);
+                }
+            }, 100);
         }
     });
-
 </script>

@@ -13261,6 +13261,22 @@ Cart Page
 
 }
 
+.boton {
+    position: relative;
+    display: block;
+    color: var(--gifall-black);
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    background: var(--gifall-primary);
+    padding: 12px 0px 13px;
+    border-radius: 25px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+
+  }
+
+
 .checkout__payment-btn a:hover {
   color: #ffffff;
   background: var(--gifall-black);

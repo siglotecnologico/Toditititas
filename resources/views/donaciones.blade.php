@@ -337,7 +337,7 @@
 
                                     </div>
                                     <div class="btn-box">
-                                        <a href="{{ route('donations.create') }}">Contribuir</a>
+                                        <a href="{{ route('donate.index') }}">Contribuir</a>
                                     </div>
                                 </div>
                             </div>
